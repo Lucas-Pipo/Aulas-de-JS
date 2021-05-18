@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body{
+            background-color: rgb(146, 146, 206);
+            color: white;
+            font: normal 20pt Arial;
+        }
+        h1{
+            color: yellow;
+        }
+        p{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <script>
+        var nome = prompt('Qual é o seu nome?') // dupla barra serve pra comentar >>o código
+        document.write(`O seu nome é <strong>${nome}</strong><br/>`)
+        document.write(`O seu nome possui ${nome.length} letras!<br/>`)
+        document.write(`Em caixa alta ficaria ${nome.toUpperCase()}!<br/>`)
+        document.write(`Porém, escrito em caixa baixa ficaria ${nome.toLowerCase()}!`)
+        var n1 = Number(prompt('Digite um número: '))
+        var n2 = Number(prompt('Digite um segundo número: '))
+        var s = n1 + n2
+        alert(`A soma de ${n1} e ${n2} é de ${s}!`)
+        document.write(`Agora você possui um total de: ${s.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})}`)
+    </script>
+</body>
+</html>

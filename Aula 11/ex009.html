@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você é estrangeiro?</title>
+</head>
+<body>
+    <h1>Você é estrangeiro?</h1>
+    Qual o seu país: <input type="text" name="pais" id="pais">
+    <input type="button" value="Teste" onclick="verificar()">
+    <div id='resposta'></div>
+    <script>
+        function verificar(){
+            var pais = document.getElementById('pais')
+            var resposta = document.getElementById('resposta')
+            resposta.innerHTML = `O seu pais é <strong>${pais.value}!</strong>`
+            if (pais.value == 'Brasil'){
+                resposta.innerHTML += '<p>Você é <strong>brasileiro!</strong> Meus pêsames!</p>'
+            }else{
+                resposta.innerHTML += '<p>Você é <strong>estrangeiro!</strong> Que sorte a sua!</p>'
+            }
+        resposta.innerHTML += '<p> Obrigado por participar!</p>'
+        }
+    </script>
+</body>
+</html>
