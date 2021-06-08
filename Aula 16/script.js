@@ -1,5 +1,7 @@
 let num = document.getElementById("numtxt")
 let tab = document.getElementById('opt')
+// tentativa de conversão em array - 
+var tabela = Array.apply(null, tab);
 function analisador(){
     if(num.value.length == 0|| num.value<1 || num.value>100){
         window.alert("[ERRO]Por favor, digite um número válido!")
@@ -11,7 +13,6 @@ function analisador(){
         tab.add(elem, tab.options[0])
     }
 }
-tab.sort()
 function finalizar(){
     //Declarar variável para guardar os valores de soma
     var s = 0
@@ -24,11 +25,12 @@ function finalizar(){
         s += Number(tab[i].value)
     }//Textos do final do finalizar
     resultado.innerHTML += `A soma de todos os valores é de ${s}`
-    //resultado.innerHTML += `<br>O primeiro número é ${tab[tab.length-1].value}`
-    //resultado.innerHTML += `<br>O último número é ${tab[0].value}`
+    resultado.innerHTML += `<br>O primeiro número é ${tab[tab.length-1].value}`
+    resultado.innerHTML += `<br>O último número é ${tab[0].value}`
+    tabela.sort();
     resultado.innerHTML += `<br>Existe um total de ${tab.length} elementos`
     resultado.innerHTML += `<br>A média dos valores digitados é ${s/tab.length}`
     resultado.innerHTML += `<br>O menor número da lista é ${tab[0].value}`
     resultado.innerHTML += `<br>O maior número da lista é ${tab[tab.length-1].value}`
-    tab.innerHTML = ""
+    tab.innerHTML = ''
 }
